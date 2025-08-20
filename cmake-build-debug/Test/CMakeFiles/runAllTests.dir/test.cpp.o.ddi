@@ -1,0 +1,11 @@
+{
+"rules": [
+{
+"primary-output": "Test/CMakeFiles/runAllTests.dir/test.cpp.o",
+"requires": [
+]
+}
+],
+"version": 0,
+"revision": 0
+}

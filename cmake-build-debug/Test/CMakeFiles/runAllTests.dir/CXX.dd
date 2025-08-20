@@ -1,0 +1,7 @@
+ninja_dyndep_version = 1.0
+build Test/CMakeFiles/runAllTests.dir/test.cpp.o: dyndep
+
+build Test/CMakeFiles/runAllTests.dir/runAllTests.cpp.o: dyndep
+
+build Test/CMakeFiles/runAllTests.dir/__/functions.cpp.o: dyndep
+

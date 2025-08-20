@@ -1,0 +1,22 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"dir-cur-bld" : "/home/Giovanni/CLionProjects/ProgettoEsame/cmake-build-debug/Test",
+	"dir-cur-src" : "/home/Giovanni/CLionProjects/ProgettoEsame/Test",
+	"dir-top-bld" : "/home/Giovanni/CLionProjects/ProgettoEsame/cmake-build-debug",
+	"dir-top-src" : "/home/Giovanni/CLionProjects/ProgettoEsame",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"/home/Giovanni/CLionProjects/ProgettoEsame/Test/googletest/googletest/include",
+		"/home/Giovanni/CLionProjects/ProgettoEsame/Test/googletest/googletest"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/Giovanni/CLionProjects/ProgettoEsame/cmake-build-debug/Test/CMakeFiles/runAllTests.dir"
+}
