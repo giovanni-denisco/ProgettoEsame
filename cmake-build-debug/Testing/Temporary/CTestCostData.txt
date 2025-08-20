@@ -1,6 +1,0 @@
-SampleTest.TrueIsTrue 5 0.0024994
-FactorialTest.HandlesZeroInput 4 0.00168737
-FactorialTest.PositiveNumber3 3 0.00179698
-FactorialTest.PositiveNumber5 3 0.00153983
-FactorialTest.PositiveNumber6 1 0.00412956
----

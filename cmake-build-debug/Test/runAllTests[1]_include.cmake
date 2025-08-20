@@ -1,5 +1,0 @@
-if(EXISTS "/home/Giovanni/CLionProjects/ProgettoEsame/cmake-build-debug/Test/runAllTests[1]_tests.cmake")
-  include("/home/Giovanni/CLionProjects/ProgettoEsame/cmake-build-debug/Test/runAllTests[1]_tests.cmake")
-else()
-  add_test(runAllTests_NOT_BUILT runAllTests_NOT_BUILT)
-endif()
