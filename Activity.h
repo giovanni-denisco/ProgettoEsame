@@ -4,9 +4,24 @@
 
 class Activity {
 public:
-    void setTimeStart();
-    void setTimeEnd();
-    void setDescription(std::string desc);
+    //Metodi
+    void userTimeStart();
+    void userTimeEnd();
+    void userDescription();
+
+    //Metodi getter
+    int getHourTimeStart();
+    int getMinTimeStart();
+    int getHourTimeEnd();
+    int getMinTimeEnd();
+    std::string getDescription();
+
+    //Metodi setter
+    void setHourTimeStart(int h);
+    void setMinTimeStart(int m);
+    void setHourTimeEnd(int h);
+    void setMinTimeEnd(int m);
+    void setDescription(const std::string& desc);
 
 private:
     int hourTimeStart, minTimeStart;

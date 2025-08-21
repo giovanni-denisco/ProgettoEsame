@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(ProgettoEsame main.cpp
         Activity.h
-        Activity.cpp)
+        Activity.cpp
+        Register.cpp
+        Register.h)
 
 #NCurses
 set(CURSES_NEED_NCURSES TRUE)
