@@ -4,7 +4,7 @@ add_subdirectory(googletest)
 set(TEST_SOURCES
         test.cpp
         runAllTests.cpp
-        ../functions.cpp
+        ../Activity.cpp
 )
 
 add_executable(runAllTests ${TEST_SOURCES})

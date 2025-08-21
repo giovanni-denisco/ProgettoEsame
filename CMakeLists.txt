@@ -4,8 +4,8 @@ project(ProgettoEsame)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(ProgettoEsame main.cpp
-        functions.h
-        functions.cpp)
+        Activity.h
+        Activity.cpp)
 
 #NCurses
 set(CURSES_NEED_NCURSES TRUE)
