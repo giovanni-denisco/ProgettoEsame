@@ -1,22 +1,32 @@
 #include <iostream>
 #include <ncurses.h>
 #include <unistd.h>
+#include "Activity.h"
+#include "Register.h"
 
 int main() {
 
+    //Inizializzazione NCurses
     initscr();
-    start_color();               // Abilita i colori
-    init_pair(2, COLOR_RED, COLOR_BLACK);  // Definisce coppia colori
+    noecho();
+    cbreak();
 
-    attron(COLOR_PAIR(1));       // Usa coppia colori 1
-    printw("Testo rosso su nero\n");
-    attroff(COLOR_PAIR(1));      // Disattiva
+    int xMax, yMax;
+    getmaxyx(stdscr, yMax, xMax);
 
-    printw("Testo normale\n");
+    //Creazione finestra menù
+    WINDOW * menuWindow = newwin(0, 0, 0, 0);
+    box(menuWindow, 0, 0);
     refresh();
+    wrefresh(menuWindow);
+
+    keypad(menuWindow, true);
+
     getch();
     endwin();
+
     return 0;
+
 
 }
 
