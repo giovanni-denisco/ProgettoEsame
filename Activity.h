@@ -10,11 +10,11 @@ public:
     void userDescription();
 
     //Metodi getter
-    int getHourTimeStart();
-    int getMinTimeStart();
-    int getHourTimeEnd();
-    int getMinTimeEnd();
-    std::string getDescription();
+    int getHourTimeStart() const;
+    int getMinTimeStart() const;
+    int getHourTimeEnd() const;
+    int getMinTimeEnd() const;
+    std::string getDescription() const;
 
     //Metodi setter
     void setHourTimeStart(int h);

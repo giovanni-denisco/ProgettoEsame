@@ -60,23 +60,23 @@ void Activity::userDescription() {
 
 //Metodi getter
 
-int Activity::getHourTimeStart() {
+int Activity::getHourTimeStart() const {
     return hourTimeStart;
 }
 
-int Activity::getMinTimeStart() {
+int Activity::getMinTimeStart() const {
     return minTimeStart;
 }
 
-int Activity::getHourTimeEnd() {
+int Activity::getHourTimeEnd() const {
     return hourTimeEnd;
 }
 
-int Activity::getMinTimeEnd() {
+int Activity::getMinTimeEnd() const {
     return minTimeEnd;
 }
 
-std::string Activity::getDescription() {
+std::string Activity::getDescription() const {
     return description;
 }
 
