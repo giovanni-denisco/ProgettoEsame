@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <vector>
+#include <ncurses.h>
 #include "Register.h"
 
 
@@ -16,19 +17,21 @@ void Register::removeActivity(int index) {
     }
 }
 
+//Funzione per visualizzare eventuali attività
 void Register::showActivities() const {
     if (activities.empty()) {
-        std::cout << "Nessuna attività presente" << std::endl;
+        printw("Nessuna attività presente\n");
         return;
     }
 
     for (size_t i = 0; i < activities.size(); ++i) {
-        std::cout << "Attività " << i << ": "
-                  << activities[i].getDescription()
-                  << " (" << activities[i].getHourTimeStart() << ":"
-                  << activities[i].getMinTimeStart() << " - "
-                  << activities[i].getHourTimeEnd() << ":"
-                  << activities[i].getMinTimeEnd() << ")"
-                  << std::endl;
+        printw("Attività %zu: %s: %s (%02d:%02d - %02d:%02d)\n",
+               i + 1,
+               activities[i].getTitle().c_str(),
+               activities[i].getDescription().c_str(),
+               activities[i].getHourTimeStart(),
+               activities[i].getMinTimeStart(),
+               activities[i].getHourTimeEnd(),
+               activities[i].getMinTimeEnd());
     }
 }

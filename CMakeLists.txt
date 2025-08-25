@@ -7,7 +7,8 @@ add_executable(ProgettoEsame main.cpp
         Activity.h
         Activity.cpp
         Register.cpp
-        Register.h)
+        Register.h
+)
 
 #NCurses
 set(CURSES_NEED_NCURSES TRUE)

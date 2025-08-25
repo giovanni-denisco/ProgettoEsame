@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <stdexcept>
 #include "Activity.h"
 
 void Activity::userTimeStart() {
@@ -52,10 +53,13 @@ void Activity::userTimeEnd() {
 }
 
 void Activity::userDescription() {
-
     std::cout << "Inserisci descrizione dell'attività:" << std::endl;
     std::getline(std::cin, description);
+}
 
+void Activity::userTitle() {
+    std::cout << "Inserisci titolo attività" << std::endl;
+    std::getline(std::cin, title);
 }
 
 //Metodi getter
@@ -80,40 +84,44 @@ std::string Activity::getDescription() const {
     return description;
 }
 
+std::string Activity::getTitle() const {
+    return title;
+}
+
+
 //Metodi setter
 
 void Activity::setHourTimeStart(int h) {
-    if (h >= 0 && h <= 23)
-        hourTimeStart = h;
-    else
-        std::cout << "Ora non valida!" << std::endl;
+    if (h < 0 || h > 23)
+        throw std::invalid_argument("Ora di inizio non valida (0-23)");
+    hourTimeStart = h;
 }
 
 void Activity::setMinTimeStart(int m) {
-    if (m >= 0 && m <= 59)
-        minTimeStart = m;
-    else
-        std::cout << "Minuti non validi!" << std::endl;
+    if (m < 0 || m > 59)
+        throw std::invalid_argument("Minuti di inizio non validi (0-59)");
+    minTimeStart = m;
 }
 
 void Activity::setHourTimeEnd(int h) {
-    if (h >= 0 && h <= 23)
-        hourTimeEnd = h;
-    else
-        std::cout << "Ora non valida!" << std::endl;
+    if (h < 0 || h > 23)
+        throw std::invalid_argument("Ora di fine non valida (0-23)");
+    hourTimeEnd = h;
 }
 
 void Activity::setMinTimeEnd(int m) {
-    if (m >= 0 && m <= 59)
-        minTimeEnd = m;
-    else
-        std::cout << "Minuti non validi!" << std::endl;
+    if (m < 0 || m > 59)
+        throw std::invalid_argument("Minuti di fine non validi (0-59)");
+    minTimeEnd = m;
 }
 
 void Activity::setDescription(const std::string& desc) {
     description = desc;
 }
 
+void Activity::setTitle(const std::string& t) {
+    title = t;
+}
 
 
 

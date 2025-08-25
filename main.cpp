@@ -64,42 +64,63 @@ int main() {
                     clear();
                     Activity a;
                     std::string desc;
+                    std::string title;
                     int hStart, mStart, hEnd, mEnd;
+
+                    printw("Inserisci titolo: ");
+                    echo();
+                    char bufferTitle[100];
+                    getnstr(bufferTitle, 100);
+                    title = bufferTitle;
 
                     printw("Inserisci descrizione: ");
                     echo();
-                    char buffer[100];
-                    getnstr(buffer, 100);
-                    desc = buffer;
+                    char bufferDesc[100];
+                    getnstr(bufferDesc, 100);
+                    desc = bufferDesc;
 
-                    printw("Ora inizio: ");
-                    scanw("%d", &hStart);
-                    printw("Minuti inizio: ");
-                    scanw("%d", &mStart);
-                    printw("Ora fine: ");
-                    scanw("%d", &hEnd);
-                    printw("Minuti fine: ");
-                    scanw("%d", &mEnd);
+                    //Gestione eccezioni e controllo validità orario
+                    bool valid = false;
+                    while (!valid) {
+                        printw("\nOra inizio: ");
+                        scanw("%d", &hStart);
+                        printw("Minuti inizio: ");
+                        scanw("%d", &mStart);
+                        printw("Ora fine: ");
+                        scanw("%d", &hEnd);
+                        printw("Minuti fine: ");
+                        scanw("%d", &mEnd);
 
-                    noecho();
+                        try {
+                            a.setTitle(title);
+                            a.setDescription(desc);
+                            a.setHourTimeStart(hStart);
+                            a.setMinTimeStart(mStart);
+                            a.setHourTimeEnd(hEnd);
+                            a.setMinTimeEnd(mEnd);
 
-                    a.setDescription(desc);
-                    a.setHourTimeStart(hStart);
-                    a.setMinTimeStart(mStart);
-                    a.setHourTimeEnd(hEnd);
-                    a.setMinTimeEnd(mEnd);
+                            if (hEnd < hStart || (hEnd == hStart && mEnd <= mStart)) {
+                                throw std::invalid_argument("L'orario di fine deve essere dopo l'inizio");
+                            }
 
+                            valid = true;
+
+                        } catch (const std::exception& e) {
+                            printw("\nErrore: %s", e.what());
+                            printw("\nRiprova a inserire gli orari...\n");
+                        }
+                    }
                     registro.addActivity(a);
-
                     printw("\nAttività aggiunta con successo! Premi un tasto...");
                     getch();
+                }
+                else if (highlight == 2) {
+                    endwin();
+                    return 0;
                 }
             default:
                 break;
         }
-
-        if (choice == 10)
-            break;
     }
 
     getch();

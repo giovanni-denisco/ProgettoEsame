@@ -2,8 +2,6 @@
 #include <gtest/gtest.h>
 #include "../Activity.h"
 
-//Creo oggetto di test da usare in tutti i test
-
 class ActivityTest : public ::testing::Test {
 
 protected:
@@ -46,14 +44,19 @@ TEST_F(ActivityTest, SetGetDescription) {
 //Test setter/getter valori non validi
 
 TEST_F(ActivityTest, SetHourTimeStartInvalid) {
-    activity.setHourTimeStart(25);
-    EXPECT_NE(activity.getHourTimeStart(), 25);
+    EXPECT_THROW(activity.setHourTimeStart(25), std::invalid_argument);
 }
 
 TEST_F(ActivityTest, SetMinTimeStartInvalid) {
-    activity.setMinTimeStart(73);
-    EXPECT_NE(activity.getMinTimeStart(), 73);
+    EXPECT_THROW(activity.setMinTimeStart(73), std::invalid_argument);
 }
 
+TEST_F(ActivityTest, SetHourTimeEndInvalid) {
+    EXPECT_THROW(activity.setHourTimeEnd(30), std::invalid_argument);
+}
+
+TEST_F(ActivityTest, SetMinTimeEndInvalid) {
+    EXPECT_THROW(activity.setMinTimeEnd(90), std::invalid_argument);
+}
 
 
