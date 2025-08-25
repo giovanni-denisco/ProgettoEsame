@@ -18,6 +18,7 @@ public:
     std::string getDescription() const;
     std::string getTitle() const;
 
+
     //Metodi setter
     void setHourTimeStart(int h);
     void setMinTimeStart(int m);
