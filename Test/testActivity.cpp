@@ -1,5 +1,6 @@
 
 #include <gtest/gtest.h>
+#include <ncurses.h>
 #include "../Activity.h"
 
 class ActivityTest : public ::testing::Test {

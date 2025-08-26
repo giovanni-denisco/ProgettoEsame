@@ -20,7 +20,7 @@ void Register::removeActivity(int index) {
 //Funzione per visualizzare eventuali attività
 void Register::showActivities() const {
     if (activities.empty()) {
-        printw("Nessuna attività presente\n");
+        std::cout << ("Nessuna attività presente\n");
         return;
     }
 
@@ -34,4 +34,12 @@ void Register::showActivities() const {
                activities[i].getHourTimeEnd(),
                activities[i].getMinTimeEnd());
     }
+}
+
+bool Register::isEmpty() const {
+    return activities.empty();
+}
+
+int Register::numberActivities() const {
+    return activities.size();
 }

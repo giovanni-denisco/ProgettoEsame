@@ -24,14 +24,14 @@ int main() {
 
     keypad(menuWindow, true);
 
-    std::string choices[3] = {"Mostra Attività", "Aggiungi Attività", "Esci"};
+    std::string choices[4] = {"Mostra Attività", "Aggiungi Attività", "Rimuovi Attività", "Esci"};
     int choice;
     int highlight = 0;
 
     while (1) {
         werase(menuWindow);
         box(menuWindow, 0, 0);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             if (i == highlight)
                 wattron(menuWindow, A_REVERSE);
             mvwprintw(menuWindow, i+1, 1, choices[i].c_str());
@@ -44,11 +44,11 @@ int main() {
             case KEY_UP:
                 highlight--;
             if (highlight == -1)
-                highlight = 2;
+                highlight = 3;
             break;
             case KEY_DOWN:
                 highlight++;
-            if (highlight == 3)
+            if (highlight == 4)
                 highlight = 0;
             break;
 
@@ -115,6 +115,35 @@ int main() {
                     getch();
                 }
                 else if (highlight == 2) {
+                    clear();
+                    registro.showActivities();
+
+                    if (registro.isEmpty()) {
+                        printw("\nNessuna attività da eliminare.");
+                        getch();
+                    }
+                    else {
+                        bool valid = false;
+
+                        while (!valid) {
+                            printw("\nInserisci l'indice dell'attività da eliminare: ");
+                            refresh();
+                            echo();
+                            int index;
+                            scanw("%d", &index);
+                            noecho();
+                            //Controlli indice inserito
+                            if (index < 1 || index > registro.numberActivities()) {
+                                printw("Indice non valido!");
+                            }
+                            else {
+                                registro.removeActivity(index-1);
+                                valid = true;
+                            }
+                        }
+                    }
+                }
+                else if (highlight == 3) {
                     endwin();
                     return 0;
                 }
@@ -124,11 +153,6 @@ int main() {
     }
 
     getch();
-    endwin();
-
-    return 0;
-
-
 }
 
 

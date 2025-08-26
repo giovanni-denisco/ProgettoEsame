@@ -11,6 +11,8 @@ public:
     void addActivity(const Activity& a);
     void removeActivity(int index);
     void showActivities() const;
+    bool isEmpty() const;
+    int numberActivities() const;
 private:
     std::vector<Activity> activities;
 };
