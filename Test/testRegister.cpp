@@ -3,6 +3,7 @@
 #include "../Register.h"
 #include "../Activity.h"
 
+//Creazione Classe per Test
 class RegisterTest : public ::testing::Test {
 protected:
     Register reg;

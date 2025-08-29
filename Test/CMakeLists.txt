@@ -3,7 +3,6 @@ add_subdirectory(googletest)
 
 set(TEST_SOURCES
         testActivity.cpp
-        runAllTests.cpp
         testRegister.cpp
         ../Activity.cpp
         ../Register.cpp

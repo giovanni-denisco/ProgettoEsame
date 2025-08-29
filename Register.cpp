@@ -17,7 +17,6 @@ void Register::removeActivity(int index) {
     }
 }
 
-//Funzione per visualizzare eventuali attività
 void Register::showActivities() const {
     if (activities.empty()) {
         std::cout << ("Nessuna attività presente\n");

@@ -4,11 +4,6 @@
 
 class Activity {
 public:
-    //Metodi
-    void userTimeStart();
-    void userTimeEnd();
-    void userDescription();
-    void userTitle();
 
     //Metodi getter
     int getHourTimeStart() const;
@@ -28,6 +23,8 @@ public:
     void setTitle(const std::string& t);
 
 private:
+
+    //Attributi
     int hourTimeStart, minTimeStart;
     int hourTimeEnd, minTimeEnd;
     std::string description;

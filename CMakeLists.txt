@@ -8,6 +8,8 @@ add_executable(ProgettoEsame main.cpp
         Activity.cpp
         Register.cpp
         Register.h
+        Menu.cpp
+        Menu.h
 )
 
 #NCurses

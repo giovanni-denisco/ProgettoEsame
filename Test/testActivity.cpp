@@ -3,17 +3,13 @@
 #include <ncurses.h>
 #include "../Activity.h"
 
+//Creazione Classe per Test
 class ActivityTest : public ::testing::Test {
 
 protected:
     Activity activity;
 
 };
-
-
-TEST(SampleTest, TrueIsTrue) {
-    EXPECT_TRUE(true);
-}
 
 //Test su metodi setter/getter
 
@@ -42,7 +38,7 @@ TEST_F(ActivityTest, SetGetDescription) {
     EXPECT_EQ(activity.getDescription(), "Spesa");
 }
 
-//Test setter/getter valori non validi
+//Test setter/getter valori non validi per verificare eccezioni
 
 TEST_F(ActivityTest, SetHourTimeStartInvalid) {
     EXPECT_THROW(activity.setHourTimeStart(25), std::invalid_argument);
